@@ -1,0 +1,83 @@
+﻿<html>
+<head>
+<meta charset="UTF-8"> 
+<script>
+/*    
+        @licstart  The following is the entire license notice for this page.
+        Copyright (C) 2015  Carlos J. Costa
+        The JavaScript code in this page is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.   
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+
+numobj=20;
+var x=[];
+var y=[];
+function colocarPosicao(){
+	criarmundo="";
+	for (i=1; i<20; i++){
+		x[i]=Math.floor(Math.random()*10)*10;
+		y[i]=Math.floor(Math.random()*10)*10;
+		criarmundo=criarmundo+'<img src="aaa.jpg" id="imagem" style="height:30;width:30;position:relative;left:'+x[i]+'px;top:'+y[i]+'px;">';
+                console.log(x[i]+","+y[i]);
+	}
+	document.getElementById("mundo").innerHTML=criarmundo+'<img src="aaa.jpg" id="imagem" style="height:30;width:30;position:relative;left:100px;top:100px;">';
+
+}
+
+
+function verPosicao(esq,cima){
+        console.log(esq+","+cima);
+	for (i=1;i<=numobj;i++){
+       		if ((esq==x[i])&&(cima==y[i])){
+			alert("pisou");
+		}
+     
+	}
+
+}
+function irdir(valor){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        esqn=parseInt(esq);
+	esqn=esqn+valor;
+	verPosicao(esqn,parseInt(cima))
+	document.getElementById("imagem").style.left=esqn+"px";
+};
+
+function desce(valor){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        ciman=parseInt(cima);
+	ciman=ciman+valor;
+	verPosicao(parseInt(esq),ciman)
+	document.getElementById("imagem").style.top=ciman+"px";
+};
+
+
+
+
+</script>
+</head>
+<body onload="colocarPosicao()">
+<button onclick="irdir(-10);">esquerda</button>
+<button onclick="irdir(10);">direita</button>
+<button onclick="desce(-10);">cima</button>
+<button onclick="desce(10);">baixo</button>
+<div id="mundo">
+
+</div>
+
+</body>
+</htm>

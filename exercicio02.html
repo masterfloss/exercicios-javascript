@@ -1,0 +1,72 @@
+﻿<html>
+<head>
+<meta charset="UTF-8"> 
+<script>
+/*    
+        @licstart  The following is the entire license notice for this page.
+        Copyright (C) 2015  Carlos J. Costa
+        The JavaScript code in this page is free software: you can
+        redistribute it and/or modify it under the terms of the GNU
+        General Public License (GNU GPL) as published by the Free Software
+        Foundation, either version 3 of the License, or (at your option)
+        any later version.  The code is distributed WITHOUT ANY WARRANTY;
+        without even the implied warranty of MERCHANTABILITY or FITNESS
+        FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+        As additional permission under GNU GPL version 3 section 7, you
+        may distribute non-source (e.g., minimized or compacted) forms of
+        that code without the copy of the GNU GPL normally required by
+        section 4, provided you include this license notice and a URL
+        through which recipients can access the Corresponding Source.   
+        @licend  The above is the entire license notice
+        for the JavaScript code in this page.
+*/
+
+
+function meteObjectos(){
+
+
+};
+
+function irdir(){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        esqn=parseInt(esq);
+	esqn=esqn+10;
+	document.getElementById("imagem").style.left=esqn+"px";
+};
+function iresq(){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        esqn=parseInt(esq);
+	esqn=esqn-10;
+	document.getElementById("imagem").style.left=esqn+"px";
+};
+
+
+function desce(){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        ciman=parseInt(cima);
+	ciman=ciman+10;
+	document.getElementById("imagem").style.top=ciman+"px";
+};
+
+function sobe(){
+	esq=document.getElementById("imagem").style.left;
+	cima=document.getElementById("imagem").style.top;
+        ciman=parseInt(cima);
+	ciman=ciman-10;
+	document.getElementById("imagem").style.top=ciman+"px";
+};
+
+
+</script>
+</head>
+<body>
+<button onclick="iresq();">esquerda</button>
+<button onclick="irdir();">direita</button>
+<button onclick="sobe();">cima</button>
+<button onclick="desce();">baixo</button>
+<img src="aaa.jpg" id="imagem" style="height:30;width:30;position:relative;left:100px;top:100;">
+</body>
+</htm>
